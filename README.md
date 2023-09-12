@@ -37,6 +37,10 @@ What to cover ?
     => blender scripting ?  
                     - setting up geom primitives in space
                     - mandelbulb
+                    - https://www.youtube.com/watch?v=ZpLffMAxB_s&ab_channel=Cygnus3D
+                    - https://askchatgpt3.com/f/ask-chat-gpt-3-how-to-create-a-blender-model?blogcategory=Coding+Software
+                    - https://www.reddit.com/r/blenderhelp/comments/11x2rqw/has_anyone_been_able_to_get_chatgpt_to_create/
+                    
                             
     ⇒ threejs ?
 
@@ -46,6 +50,10 @@ What to cover ?
 
     ⇒ fragment shader à appliquer sur un cube / plane
 
+## Tools
 
+- coding search engine : https://www.phind.com/
+- ask question about a github project: https://bloop.ai/
+- autcompletion extension for vscode : https://codeium.com/
 
 
