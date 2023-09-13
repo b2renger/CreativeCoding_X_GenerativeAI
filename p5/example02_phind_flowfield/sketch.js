@@ -14,7 +14,7 @@ function generateFlowField() {
   for (let x = 0; x < width; x += gridSize) {
     for (let y = 0; y < height; y += gridSize) {
       // Calculate the angle based on Perlin noise
-      let angle = noise(x * noiseScale, y * noiseScale, millis()*0.00051) * TWO_PI;
+      let angle = noise(x * noiseScale, y * noiseScale, millis()*0.0051) * TWO_PI;
       // Create a vector with magnitude 1 and angle based on Perlin noise
       let vector = p5.Vector.fromAngle(angle);
       // Store the vector in the flow field grid
@@ -31,10 +31,11 @@ function displayFlowField() {
       let vector = flowField[index];
       if (vector) {
         const start = createVector(x, y);
-
-        //const end = p5.Vector.add(start, vector.mult(gridSize));
-        const end = createVector(start.x + vector.x  *gridSize , start.y + vector.y*gridSize)
-        line(start.x, start.y, end.x, end.y);
+        //const drive = vector.mult(gridSize)
+        const endV = p5.Vector.add(start,p5.Vector.mult(vector, gridSize));
+        //const end = createVector(start.x + vector.x * gridSize , start.y + vector.y*gridSize);
+        //console.log(endV, end);
+        line(start.x, start.y, endV.x, endV.y);
       }
     }
   }
@@ -51,6 +52,8 @@ function setup() {
   }
   // Generate the flow field
   generateFlowField();
+  displayFlowField();
+  //noLoop();
 }
 
 

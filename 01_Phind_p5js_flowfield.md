@@ -315,12 +315,20 @@ displayFlowField() {
 
 💬💬💬
 
-Well this was more difficult to fix and didn't manage to fix it with phind (after many iterations)
+Well there is a real issue here ! And I didn't manage to make phind find the solution even with many iteration. By experience, the visual result hinted me towards an issue with the vector method and the copy / shallow copy of vectors.
 
-Actually the issue was linked to a bug in p5js and the defintion of the mult operation that was expecting three dimensional vectors. Doing it manually did fix it :
+If you look more closely at the documentation : https://p5js.org/reference/#/p5.Vector/mult
+
+You will see this : "The static version of this method creates a new p5.Vector while the non-static version acts on the vector directly."
+
+So the line provided by phind 
+```js
+let end = p5.Vector.add(start, vector.mult(gridSize));
+```
+actually builds up the 'vector' it should be adressed statically.
 
 ```js
-const end = createVector(start.x + vector.x  *gridSize , start.y + vector.y*gridSize)
+let end = p5.Vector.add(start,  p5.Vector.mult(gridSize));
 ```
 
 
