@@ -1,6 +1,6 @@
 
 // Define the number of boids
-const numBoids = 10;
+const numBoids = 50;
 const noiseScale = 0.01;
 const gridSize = 15;
 const maxSpeed = 2;
@@ -14,7 +14,7 @@ function generateFlowField() {
   for (let x = 0; x < width; x += gridSize) {
     for (let y = 0; y < height; y += gridSize) {
       // Calculate the angle based on Perlin noise
-      let angle = noise(x * noiseScale, y * noiseScale) * TWO_PI;
+      let angle = noise(x * noiseScale, y * noiseScale, millis()*0.00051) * TWO_PI;
       // Create a vector with magnitude 1 and angle based on Perlin noise
       let vector = p5.Vector.fromAngle(angle);
       // Store the vector in the flow field grid
@@ -30,8 +30,10 @@ function displayFlowField() {
 
       let vector = flowField[index];
       if (vector) {
-        let start = createVector(x, y);
-        let end = p5.Vector.add(start, vector.mult(gridSize));
+        const start = createVector(x, y);
+
+        //const end = p5.Vector.add(start, vector.mult(gridSize));
+        const end = createVector(start.x + vector.x  *gridSize , start.y + vector.y*gridSize)
         line(start.x, start.y, end.x, end.y);
       }
     }
@@ -54,7 +56,8 @@ function setup() {
 
 function draw() {
   background(255);
-  //displayFlowField();
+  generateFlowField();
+  displayFlowField();
 
   // Update and display the flock of agents
   for (let boid of flock) {
