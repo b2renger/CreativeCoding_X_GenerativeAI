@@ -1,10 +1,10 @@
 # Phind - AI search engine
 
-🤓	**Me interating with Phinf**
+🤓 **Prompting an AI**
 
-🤖	 *phind answers*
+🤖 *AI answers*
 
-💬 Me commenting on what happened
+💬 Commenting on what happened
 
 ---
 ## Interaction 1
