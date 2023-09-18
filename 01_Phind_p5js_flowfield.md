@@ -1,5 +1,7 @@
 # Phind - AI search engine
 
+![](./assets/p5/01_P5js_flowfield.jpg)
+
 🤓 **Prompting an AI**
 
 🤖 *AI answers*
