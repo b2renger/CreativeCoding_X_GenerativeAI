@@ -1,5 +1,7 @@
 # A more integrated approach - codyAI (sourcegraph)
 
+![](./assets/p5/01_P5js_codyAI.jpg)
+
 ## Coding by writing comments !
 ```js
 // create variables to store the number of rows and columns
@@ -53,12 +55,13 @@ function windowResized() {
 ## Selecting a piece of code to ask for a fix or a change 
 
 Code selected :
-```
+```js
  for(let i = 0; i < 10; i++) {
       let radius = i * 20;
       ellipse(x, y, radius, radius);
     }
 ```
+
 Chat extract :
 ```
 Me

@@ -1,6 +1,8 @@
 
 # Basics with a chat interface - the naive approach
 
+![](./assets/p5/00_p5js_101.jpg)
+
 🤓 **Prompting an AI**
 
 🤖 *AI answers*
