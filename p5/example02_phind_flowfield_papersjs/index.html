@@ -55,6 +55,7 @@
       let exportFrame = 0;
       const framesToExport = 25; // Number of frames to export
       let exporting = true;
+      const exportEveryX = 5; // Export every X frames
 
       function generateFlowField() {
         flowField = [];
@@ -115,7 +116,7 @@
 
         view.draw()
         // Check if exporting and reached the desired number of frames
-        if (exporting && exportFrame < framesToExport) {
+        if (exporting && frame % exportEveryX == 0 && exportFrame < framesToExport) {
           exportFrame++;
           console.log(exportFrame)
          // project.exportSVG("frame"+exportFrame+".svg")
